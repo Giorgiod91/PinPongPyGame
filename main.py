@@ -14,7 +14,7 @@ running = True
 #initialize player, boss, and balls
 player = Player(screen_width // 2, screen_height // 2, 50, 50, 5)
 boss = DungeonBoss(screen_width // 4, screen_height // 4, 60, 60, 3)
-ball = Ball(player.rect.x, player.rect.y,  50, 50, 5)
+ball = Ball(player.rect.x, player.rect.y,  7, 7, 5)
 while running:
     # poll for events
     # pygame.QUIT event means the user clicked X to close your window
@@ -22,9 +22,14 @@ while running:
         if event.type == pygame.QUIT:
             running = False
     if player.rect.colliderect(ball.rect):
-        print("Player and Boss collided")
+        ball.rect.x = player.rect.x -2
+        ball.rect.y = player.rect.y -2
+
     # fill the screen with a color to wipe away anything from last frame
     screen.fill("purple")
+
+    
+
 
     # RENDER YOUR GAME HERE
      # Handle player movement
@@ -41,7 +46,7 @@ while running:
    
     boss.draw(screen)
 
-    ball.automated_movement()
+    ball.automated_movement(800, 600)
     ball.draw(screen)
 
     # flip() the display to put your work on screen

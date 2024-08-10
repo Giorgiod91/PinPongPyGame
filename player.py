@@ -34,6 +34,16 @@ class Player:
         if self.in_defense_cd and pygame.time.get_ticks() > self.in_defense_cd_end_time:
             self.color = (255, 0, 0)
             self.in_defense_cd = False
+        #check if the player hits the wall
+        if self.rect.left < 0:
+            self.rect.left = 0
+        if self.rect.right > 800:
+            self.rect.right = 800
+        if self.rect.top < 0:
+            self.rect.top = 0
+        if self.rect.bottom > 600:
+            self.rect.bottom = 600
+                
           
            
     
