@@ -19,6 +19,15 @@ class DungeonBoss:
 
         self.rect.x += self.speed * self.direction
 
+    def shootProjectiles(self):
+        self.color = (3,44,55)
+        self.direction = -1
+        self.rect.x += self.speed * self.direction
+        
+        
+
+
+
     
     def draw(self, screen):
         pygame.draw.rect(screen, self.color, self.rect)

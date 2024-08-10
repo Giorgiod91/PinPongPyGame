@@ -28,6 +28,7 @@ class Player:
               self.in_defense_cd = True
               # Set the end time of the cooldown to 5 seconds from now
               self.in_defense_cd_end_time = pygame.time.get_ticks() + 5000
+              
 
         # Check if the defense mode should be turned off
         if self.in_defense_cd and pygame.time.get_ticks() > self.in_defense_cd_end_time:
