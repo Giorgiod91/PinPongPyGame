@@ -12,6 +12,7 @@ class Goals:
         self.goal_One_Position = pygame.Rect(0, 0, 5, screen_height)  # Left side goal area
         self.goal_Two_Position = pygame.Rect(screen_width - 5, 0, 5, screen_height)  # Right side goal area
         self.goal_scored = False
+        self.goal_counter = 0
 
     def drawGoalLine(self, screen, screen_width, screen_height):
         pygame.draw.line(screen, (255, 255, 255), (400, 0), (400, 600), 5)
@@ -26,13 +27,17 @@ class Goals:
             ball.direction_x *= -1
             
             self.goal_scored = True
+       
             
         if ball.rect.colliderect(self.goal_Two_Position):
             self.player1Goals.append(1)    
            
             ball.direction_x *= -1
             self.goal_scored = True
+           
 
+
+        
         return self.goal_scored
         
 

@@ -61,9 +61,17 @@ while running:
 
     if goals.check_goal(ball, screen_width, screen_height):
         current_color = random.choice(randomColors)
+        if(current_color == "red"):
+         ball.color = (255,255,255)
+         player.color = (255,255,255)
+        elif(current_color == "white"):
+         ball.color = (0,0,255)
+         player.color = (0,0,255)
+         
+           
         print(f"Goal scored! Changing color to {current_color}")
     
-           
+   
                  
  
        
