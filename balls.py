@@ -11,6 +11,8 @@ class Ball:
         self.width = 20
         self.height = 20
 
+        
+
     def automated_movement(self, screen_width, screen_height):
         self.rect.y += self.direction_y * self.speed
         self.rect.x += self.direction_x * self.speed
@@ -30,7 +32,9 @@ class Ball:
 
     
     def check_collision(self, player):
+        pygame.mixer.init()
         if self.rect.colliderect(player.rect):
+            pygame.mixer.music.load('bounce1.Wav')
             
 
             # Determine where the ball hit the paddle

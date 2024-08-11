@@ -20,6 +20,8 @@ objects = Objects(100, 100, random.randint(1, 100), random.randint(1, 100), 5)
 ball = Ball(player.rect.x, player.rect.y,  7, 7, 5)
 current_color = "purple"
 
+pygame.mixer.init()
+
 
 goals = Goals(screen_width, screen_height)
 new_Objects = []
@@ -78,7 +80,8 @@ while running:
 
     ball.automated_movement(800, 600)
     ball.check_collision(player)
-
+    #if(collisionHappened):
+     #  pygame.mixer.music.load("bounce.wav")
    
        
         
