@@ -36,6 +36,7 @@ while running:
     player.handle_movement()
     player.useDef_Cd()
     player.draw(screen)
+    player.get_smaller_if_hit(ball)
     
     # Draw objects and goals
     objects.draw(screen)

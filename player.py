@@ -1,4 +1,5 @@
 import pygame
+from balls import Ball
 
 
 class Player:
@@ -46,7 +47,12 @@ class Player:
         if self.rect.bottom > 600:
             self.rect.bottom = 600
 
-
+    def get_smaller_if_hit(self, ball):
+        if self.rect.colliderect(ball):
+            self.width = self.width -2
+            self.height = self.height -2
+            self.rect.width = self.width
+            self.rect.height = self.height
                 
           
            
