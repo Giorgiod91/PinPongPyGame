@@ -34,7 +34,7 @@ class Ball:
     def check_collision(self, player):
         pygame.mixer.init()
         if self.rect.colliderect(player.rect):
-            pygame.mixer.music.load('bounce1.Wav')
+            
             
 
             # Determine where the ball hit the paddle
