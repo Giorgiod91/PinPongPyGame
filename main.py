@@ -38,6 +38,7 @@ while running:
     player.draw(screen)
     player.get_smaller_if_hit(ball)
     
+    
     # Draw objects and goals
     objects.draw(screen)
     goals.draw(screen)
@@ -52,8 +53,10 @@ while running:
             print("Speed Boost Activated!")
 
     # Check if a goal was scored
-    goal_scored = goals.check_goal(ball, screen_width, screen_height)
+    goal_scored = goals.check_goal(ball, screen_width, screen_height,player)
     if goal_scored:
+       
+
         current_color = random.choice(randomColors)
         if current_color == "red":
             ball.color = (255, 255, 255)

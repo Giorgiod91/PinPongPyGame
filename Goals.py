@@ -1,4 +1,5 @@
 import pygame
+from player import Player
 
 class Goals:
     def __init__(self, screen_width, screen_height):
@@ -15,7 +16,8 @@ class Goals:
         pygame.draw.line(screen, (255, 255, 255), (0, 0), (0, screen_height), 5)
         pygame.draw.line(screen, (255, 255, 255), (screen_width - 5, 0), (screen_width - 5, screen_height), 5)
 
-    def check_goal(self, ball, screen_width, screen_height):
+    def check_goal(self, ball, screen_width, screen_height,player):
+        
         self.goal_scored = False
         if ball.rect.colliderect(self.goal_One_Position):
             self.player2Goals.append(1)
@@ -24,12 +26,20 @@ class Goals:
             self.goal_scored = True
             self.goal_counter += 1
 
+            player.rect.width += 2
+            player.rect.height += 2
+            player.rect.size = (player.rect.width, player.rect.height)
+
         if ball.rect.colliderect(self.goal_Two_Position):
             self.player1Goals.append(1)
             ball.direction_x *= -1
             ball.rect.x -= 10
             self.goal_scored = True
             self.goal_counter += 1
+
+            player.rect.width += 2
+            player.rect.height += 2
+            player.rect.size = (player.rect.width, player.rect.height)
 
         if self.goal_scored:
             if self.goal_counter % 3 == 0:
