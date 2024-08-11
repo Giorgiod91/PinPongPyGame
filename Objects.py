@@ -1,6 +1,6 @@
 import pygame
 
-class DungeonBoss:
+class Objects:
     def __init__(self,x,y,width,height, speed):
         self.rect = pygame.Rect(x,y,width,height)
         self.color = (0,0,0)
@@ -21,8 +21,7 @@ class DungeonBoss:
 
     def shootProjectiles(self):
         self.color = (3,44,55)
-        self.direction = -1
-        self.rect.x += self.speed * self.direction
+        
         
         
 

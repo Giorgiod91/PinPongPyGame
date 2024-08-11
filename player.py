@@ -5,6 +5,8 @@ class Player:
     def __init__(self,x,y,width,height, speed):
         self.rect = pygame.Rect(x,y,width,height)
         self.color = (255,0,0)
+        self.width = width
+        self.height = height
         self.speed = speed
         self.in_defense_cd = False
         self.in_defense_cd_end_time = 0
@@ -43,6 +45,8 @@ class Player:
             self.rect.top = 0
         if self.rect.bottom > 600:
             self.rect.bottom = 600
+
+
                 
           
            
