@@ -15,7 +15,16 @@ running = True
 
 # Initialize player, objects, and ball
 player = Player(screen_width // 2, screen_height // 2, 22, 50, 5)
-objects = Objects(100, 100, random.randint(1, 100), random.randint(1, 100), 5)
+objects = []
+for i in range(6):
+    x = random.randint(0, screen_width -10)
+    y = random.randint(0, screen_height -10)
+    height = random.randint(0, 30)
+    width = random.randint(0,60)
+    new_object = Objects(x, y, width, height, 0)
+    objects.append(new_object)
+
+
 ball = Ball(player.rect.x, player.rect.y, 7, 7, 5)
 current_color = "purple"
 
@@ -40,7 +49,8 @@ while running:
     
     
     # Draw objects and goals
-    objects.draw(screen)
+    for obj in objects:
+        obj.draw(screen)
     goals.draw(screen)
     goals.drawGoalLine(screen, screen_width, screen_height)
 
@@ -75,7 +85,8 @@ while running:
     # Handle ball movement and collision
     ball.automated_movement(screen_width, screen_height)
     ball.check_collision(player)
-    ball.check_collision(objects)
+    for obj in objects:
+        ball.check_collision(obj)
 
     
     ball.draw(screen)

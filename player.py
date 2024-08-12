@@ -49,8 +49,8 @@ class Player:
 
     def get_smaller_if_hit(self, ball):
         if self.rect.colliderect(ball):
-            self.width = self.width -2
-            self.height = self.height -2
+            self.width = self.width -0.5
+            self.height = self.height -0.5
             self.rect.width = self.width
             self.rect.height = self.height
                 
