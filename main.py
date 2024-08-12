@@ -4,6 +4,7 @@ from player import Player
 from Objects import Objects
 from balls import Ball
 from Goals import Goals
+from enemy import Enemy
 
 # pygame setup
 pygame.init()
@@ -15,8 +16,11 @@ running = True
 
 # Initialize player, objects, and ball
 player = Player(screen_width // 2, screen_height // 2, 22, 50, 5)
+enemy = Enemy(screen_width // 3, screen_height // 3, 22, 50, 5)
 objects = []
+
 for i in range(6):
+   
     x = random.randint(0, screen_width -10)
     y = random.randint(0, screen_height -10)
     height = random.randint(0, 30)
@@ -47,10 +51,13 @@ while running:
     player.draw(screen)
     player.get_smaller_if_hit(ball)
     
-    
+ 
     # Draw objects and goals
+      # Draw objects and goals
     for obj in objects:
         obj.draw(screen)
+        
+        
     goals.draw(screen)
     goals.drawGoalLine(screen, screen_width, screen_height)
 
@@ -85,8 +92,20 @@ while running:
     # Handle ball movement and collision
     ball.automated_movement(screen_width, screen_height)
     ball.check_collision(player)
+
+    
+   
     for obj in objects:
         ball.check_collision(obj)
+        
+         
+   
+   
+        
+   
+        
+    
+        
 
     
     ball.draw(screen)

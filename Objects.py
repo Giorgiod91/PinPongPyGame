@@ -1,4 +1,5 @@
 import pygame
+from balls import Ball
 
 class Objects:
     def __init__(self,x,y,width,height, speed):
@@ -9,6 +10,8 @@ class Objects:
         self.patrol_range = 200
         self.start_x = x
         self.end_x = x + self.patrol_range
+        self.destroy = False
+        self.objects_life = 100
 
 
     def automated_movement(self):
@@ -23,7 +26,21 @@ class Objects:
         self.color = (3,44,55)
 
     
-        
+    def destroy_object(self, ball):
+            self.objects_life -=50
+            if self.objects_life <=0:
+                    print("life at 0")
+                    self.destroy = True
+                    self.rect.width = 0
+                    self.rect.height = 0
+           
+                
+
+
+    
+
+       
+
         
         
 
@@ -31,6 +48,6 @@ class Objects:
 
     
     def draw(self, screen):
-        pygame.draw.rect(screen, self.color, self.rect)
-
-
+          if self.destroy == False:
+            pygame.draw.rect(screen, self.color, self.rect)
+        
