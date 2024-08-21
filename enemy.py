@@ -6,17 +6,20 @@ class Enemy:
         self.color = (255,0,0)
         self.width = width
         self.height = height
-        self.speed = speed
+        self.speed = speed * 0.8 
         self.direction_x = 1
         self.direction_y = 1
     
     def automated_movement(self, ball_position, screen_width, screen_height):
+    
      #check ifi the ball is to the right or left of the enemy
     
      if self.rect.centery < ball_position.y:
         self.direction_y = 1
      elif self.rect.centery > ball_position.y:
         self.direction_y = -1
+     elif self.rect_centerx < ball_position.x:
+        self.direction_y = 1
      else:
         self.direction_y = 0  # Stay still if the ball is in line with the enemy
 
