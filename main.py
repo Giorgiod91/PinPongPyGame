@@ -16,7 +16,7 @@ running = True
 
 # Initialize player, objects, and ball
 player = Player(screen_width // 2, screen_height // 2, 22, 50, 5)
-enemy = Enemy(screen_width // 3, screen_height // 3, 22, 50, 5)
+enemy = Enemy(screen_width // 3, screen_height // 4, 44, 100, 10)
 objects = []
 
 for i in range(6):
@@ -56,6 +56,10 @@ while running:
       # Draw objects and goals
     for obj in objects:
         obj.draw(screen)
+
+    # Draw enemy
+    enemy.draw(screen)
+    enemy.automated_movement(ball.rect, screen_width, screen_height)
         
         
     goals.draw(screen)
