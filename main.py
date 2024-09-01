@@ -1,4 +1,4 @@
-import pygame
+
 import random
 from player import Player
 from Objects import Objects

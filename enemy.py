@@ -18,7 +18,7 @@ class Enemy:
         self.direction_y = 1
      elif self.rect.centery > ball_position.y:
         self.direction_y = -1
-     elif self.rect_centerx < ball_position.x:
+     elif self.rect.centerx < ball_position.x:
         self.direction_y = 1
      else:
         self.direction_y = 0  # Stay still if the ball is in line with the enemy
