@@ -11,3 +11,9 @@ A simple yet engaging Ping Pong game built with **Python** and **Pygame**, where
 - **Speed Boost**: Triggered after every 3 goals, press `Space` to boost the ball speed temporarily.
 - **Defense Cooldown**: Activate a defense cooldown with `R` to change the player's paddle color for 5 seconds.
 - **Random Objects**: Obstacles are randomly placed on the screen, making the game more challenging.
+
+
+
+
+https://github.com/user-attachments/assets/58dbf859-41be-487e-bde6-ce4d13e93bef
+
